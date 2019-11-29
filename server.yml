@@ -1,0 +1,7 @@
+---
+  - name: Hello world
+    hosts: web
+    gather_facts: yes
+    roles:
+      - update
+      - repos
