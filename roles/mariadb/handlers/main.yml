@@ -3,3 +3,8 @@
   service:
     name: '{{ mariadb_service }}'
     state: restarted
+
+- name: Enabled mariadb
+  service:
+    name: '{{ mariadb_service }}'
+    enabled: yes
