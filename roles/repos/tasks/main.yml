@@ -1,11 +1,63 @@
 ---
+##########################################################
+############   Add repository EPEL            ############
+##########################################################
 - name: Add repository EPEL
   yum_repository:
     name: epel
     description: EPEL YUM repo
     baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
-- name: Add resoitory MariaDB 5.5 
+
+##########################################################
+############   Add repository MariaDB v.5.5.  ############
+##########################################################
+- name: Add repository MariaDB 5.5
   yum_repository:
-    name: MariaDB52
+    name: MariaDB55
     description: official mariadb repos
     baseurl: http://yum.mariadb.org/5.5/centos7-amd64
+
+##########################################################
+############   Add repository MariaDB v.10.1. ############
+##########################################################
+- name: Add repository MariaDB 10.1 
+  yum_repository:
+    name: MariaDB101
+    description: official mariadb repos
+    baseurl: http://yum.mariadb.org/10.1/centos7-amd64
+
+##########################################################
+############   Add repository MariaDB v.10.2. ############
+##########################################################    
+- name: Add repository MariaDB 10.2
+  yum_repository: 
+    name: MariaDB102
+    description: official mariadb repos
+    baseurl: http://yum.mariadb.org/10.2/centos7-amd64
+
+##########################################################
+############   Add repository MariaDB v.10.3. ############
+##########################################################      
+- name: Add repository MariaDB 10.3
+  yum_repository:
+    name: MariaDB103
+    description: official mariadb repos
+    baseurl: http://yum.mariadb.org/10.3/centos7-amd64
+
+##########################################################
+############   Add repository MariaDB v.10.4. ############
+##########################################################      
+- name: Add repository MariaDB 10.4
+  yum_repository: 
+    name: MariaDB104
+    description: official mariadb repos
+    baseurl: http://yum.mariadb.org/10.4/centos7-amd64
+
+##########################################################
+############   Add repository Nginx (stable)  ############
+##########################################################  
+- name: Add repository Nginx
+  yum_repository: 
+    name: nginx
+    description: official nginx repos (stable)
+    baseurl: http://nginx.org/packages/centos/$releasever/$basearch/
