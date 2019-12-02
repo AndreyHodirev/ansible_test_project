@@ -7,3 +7,13 @@
     name: epel
     description: EPEL YUM repo
     baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+
+##########################################################
+############   Add repository NGINX           ############
+##########################################################
+- name: Add repository NGINX
+  yum_repository:
+    name: nginx
+    description: NGINX YUM off repo
+    baseurl: http://nginx.org/packages/centos/$releasever/$basearch/
+    gpgkey: https://nginx.org/keys/nginx_signing.key

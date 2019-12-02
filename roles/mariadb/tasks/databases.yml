@@ -1,4 +1,7 @@
 ---
+##########################################################
+############   Remove test DB                 ############
+##########################################################
 - name: Remove the test database
   mysql_db:
     name: test
@@ -8,6 +11,9 @@
     state: absent
   tags: mariadb
 
+##########################################################
+############   Create user defined databases  ############
+##########################################################
 - name: Create user defined databases
   mysql_db:
     name: "{{ item.name }}"
@@ -31,6 +37,9 @@
   when: item.changed and item.item.init_script is defined
   tags: mariadb
 
+##########################################################
+############   Create init db                 ############
+##########################################################
 - name: Initialise databases
   mysql_db:
     name: "{{ item.item.name }}"
@@ -43,6 +52,9 @@
   when: item.changed and item.item.init_script is defined
   tags: mariadb
 
+##########################################################
+############   delete init script             ############
+##########################################################
 - name: Delete init scripts from the server
   file:
     name: "/tmp/{{ item.item.init_script|basename }}"

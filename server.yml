@@ -3,6 +3,9 @@
     hosts: web
     gather_facts: yes
     roles:
-      - update
-      - repos
-      - mariadb
+#      - update
+#      
+#      - mariadb
+#      - nginx
+       - repos
+       - php

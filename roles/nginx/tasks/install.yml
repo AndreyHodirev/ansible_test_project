@@ -1,0 +1,10 @@
+---
+- name: Install NGINX last version
+  become_method: 
+    sudo
+  yum: 
+    name: nginx 
+    state: latest
+  notify:
+    - Restart nginx
+    - Enable nginx

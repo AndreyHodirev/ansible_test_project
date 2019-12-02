@@ -1,0 +1,6 @@
+---
+- name: Install PHP 
+  yum:
+    name: "{{ php_modules }}"
+    state: installed
+  tags: phpm

@@ -1,4 +1,7 @@
 ---
+##########################################################
+############   Create INIT config             ############
+##########################################################
 - name: Install server config file
   template:
     src: etc_my.cnf.d_server.cnf.j2
@@ -6,13 +9,18 @@
   notify: restart mariadb
   tags: mariadb
 
+##########################################################
+############   Create netword config          ############
+##########################################################
 - name: Install network config file
   template:
     src: etc_my.cnf.d_network.cnf.j2
     dest: "{{ mariadb_config_network }}"
   notify: restart mariadb
   tags: mariadb
-
+##########################################################
+############   Create CUSTOM conf             ############
+##########################################################
 - name: Install custom config file
   template:
     src: etc_my.cnf.d_custom.cnf.j2
@@ -21,6 +29,9 @@
   notify: restart mariadb
   tags: mariadb
 
+##########################################################
+############   SWAPPINESS                     ############
+##########################################################
 - name: Configure swappiness
   sysctl:
     name: vm.swappiness
@@ -29,6 +40,9 @@
   when: mariadb_configure_swappiness|bool
   tags: mariadb
 
+##########################################################
+############   started service                ############
+##########################################################
 - name: Ensure service is started
   service:
     name: "{{ mariadb_service }}"
