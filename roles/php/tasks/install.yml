@@ -4,3 +4,6 @@
     name: "{{ php_modules }}"
     state: installed
   tags: phpm
+  notify:
+    - restart php-fpm
+    - enable php-fpm

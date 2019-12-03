@@ -1,0 +1,10 @@
+---
+- name: Create the users
+  mysql_user:
+    name: "{{ item.dbuser }}"
+    password: "{{ item.dbpass }}"
+    host: "{{ item.dbhost|default('localhost') }}"
+    login_user: root
+    state: present
+  with_items: "{{ sites }}"
+  tags: mariadb

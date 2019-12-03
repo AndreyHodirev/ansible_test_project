@@ -8,3 +8,8 @@
   notify:
     - Restart nginx
     - Enable nginx
+
+- name: Create directory site enabled 
+  file: 
+    path: /etc/nginx/sites-available
+    state: directory

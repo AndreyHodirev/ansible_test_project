@@ -1,0 +1,8 @@
+--- 
+sites:
+  - { name: example.com, dbname: example_com, dbuser: example_com, dbpass: dfggjvdk,  dbhost: localhost }
+  - { name: example.org, dbname: example_org, dbuser: example_org, dbpass: RTggjvdk,  dbhost: localhost }
+  - { name: testansible.org, dbname: testansible_org, dbuser: testansible_org, dbpass: oiHFkjdfsk,  dbhost: localhost }
+  - { name: testansible.com, dbname: testansible_com, dbuser: testansible_com, dbpass: aOIUAshjsd,  dbhost: localhost }
+
+

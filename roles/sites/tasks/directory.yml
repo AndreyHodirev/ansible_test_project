@@ -1,0 +1,9 @@
+---
+- name: Create site directory
+  file: 
+    path: /var/www/{{ item.name }}
+    owner: nginx 
+    group: nginx 
+    mode: 0755 
+    state: directory
+  with_items: '{{ sites }}'

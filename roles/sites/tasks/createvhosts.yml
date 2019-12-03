@@ -1,0 +1,12 @@
+---
+- name: Create hosts to sites
+  template: 
+    src: nginx_site_tempConf.j2
+    dest: /etc/nginx/sites-available/{{ item.name }}.conf
+  with_items: '{{ sites }}'
+
+- name: Create test file
+  template: 
+    src: default_html.j2
+    dest: /var/www/{{ item.name }}/default.html
+  with_items: '{{ sites }}'

@@ -14,3 +14,5 @@ php_modules:
   - php-mbstring 
   - php-snmp 
   - php-soap
+
+php_ini_config: /etc/php.ini
