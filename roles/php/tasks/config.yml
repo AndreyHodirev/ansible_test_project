@@ -1,0 +1,6 @@
+- name: Configure php.ini
+  template: 
+    src: etc_php.ini_config.j2
+    dest: '{{ php_ini_config }}'
+  notify:
+    - restart php-fpm

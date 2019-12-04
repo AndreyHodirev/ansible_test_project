@@ -1,12 +1,17 @@
 ---
+- name: Clean default host nginx
+  file:
+    state: absent
+    path: /etc/nginx/conf.d/default.conf
+
 - name: Create hosts to sites
   template: 
     src: nginx_site_tempConf.j2
-    dest: /etc/nginx/sites-available/{{ item.name }}.conf
+    dest: /etc/nginx/conf.d/{{ item.name }}.conf
   with_items: '{{ sites }}'
 
-- name: Create test file
+- name: Create test file sites
   template: 
     src: default_html.j2
-    dest: /var/www/{{ item.name }}/default.html
+    dest: /var/www/{{ item.name }}/file.php
   with_items: '{{ sites }}'

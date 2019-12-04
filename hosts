@@ -1,3 +1,3 @@
 [web]
 
-192.168.10.10 ansible_connection=ssh ansible_ssh_user=root ansible_ssh_pass=Fylhtf123
+192.168.10.10 ansible_connection=ssh ansible_ssh_user={{username}} ansible_ssh_pass={{password}}

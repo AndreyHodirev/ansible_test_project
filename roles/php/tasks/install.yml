@@ -5,5 +5,5 @@
     state: installed
   tags: phpm
   notify:
-    - restart php-fpm
     - enable php-fpm
+    - start php-fpm

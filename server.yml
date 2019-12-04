@@ -1,7 +1,9 @@
 ---
-  - name: Hello world
+  - name: Install new WEB Server and DB Server - Centos 7 - 
     hosts: web
     gather_facts: yes
+    vars_files:
+      - secret.yml
     roles:
        - update
        - mariadb

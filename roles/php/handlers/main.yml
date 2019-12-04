@@ -4,6 +4,11 @@
     name: php-fpm 
     state: restarted
 
+- name: start php-fpm
+  service: 
+    name: php-fpm 
+    state: start
+
 - name: enable php-fpm
   service: 
     name: php-fpm 

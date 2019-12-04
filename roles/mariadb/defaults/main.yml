@@ -17,7 +17,7 @@ mariadb_bind_address: '127.0.0.1'
 mariadb_server_cnf: 
   query_cache_limit: '1M'
   query_cache_size: '8M'
-
+  bind-address: '0.0.0.0'
 
 # Custom configuration
 mariadb_custom_cnf: {}

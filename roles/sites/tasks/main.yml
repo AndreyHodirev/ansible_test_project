@@ -1,4 +1,11 @@
 ---
+- name: Base file
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+    
 - include_tasks: directory.yml
+- include_tasks: createdb.yml
 - include_tasks: createdbuser.yml
 - include_tasks: createvhosts.yml

@@ -5,4 +5,4 @@ sites:
   - { name: testansible.org, dbname: testansible_org, dbuser: testansible_org, dbpass: oiHFkjdfsk,  dbhost: localhost }
   - { name: testansible.com, dbname: testansible_com, dbuser: testansible_com, dbpass: aOIUAshjsd,  dbhost: localhost }
 
-
+nginx_listen_port: 80
